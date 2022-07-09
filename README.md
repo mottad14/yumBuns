@@ -1,5 +1,6 @@
 # yumBuns!
-[YumBunsLogo](https://user-images.githubusercontent.com/93226206/178125215-658caace-057a-44b7-abfe-7ace63fe3431.png)
+![YumBunsLogo](https://user-images.githubusercontent.com/93226206/178125259-50c4b7b4-53eb-469b-8426-cc9f1dc0409a.png)
+
 
 A full stack web application project that allows users to create and share recipes. This project uses React JS and Boostrap for a quick & seamless component and element built front-end UI. 
 

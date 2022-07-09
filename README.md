@@ -1,2 +1,2 @@
 # yumBuns
-A recipe full stack web application using React JS, MongoDb, Express, NodeJS, Firebase and Sass 
+A full stack web application project that allows users to create and share recipes. This project uses React JS for a quick & seamless component built front-end UI. Recipe data is stored and built using MongoDb through its NoSQL API model with Express as the routing middleware. Users are able to register and subscribe through a timed pop up or out of their own interest using Google's Firebase authentication and registration/subscription and Sass 

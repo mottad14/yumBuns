@@ -16,7 +16,7 @@ const NavBar = (props) => {
                     <Link className="nav-link" to="/create">Create a Dish</Link>
                     </li>
                 </ul>
-                <form className="d-flex" role="search">
+                <form className="d-flex mx-3" role="search">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>

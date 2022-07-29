@@ -8,7 +8,7 @@ import Create from './views/Create';
 import Recipe from './views/Recipe';
 import SubscribePop from './components/SubscribePop';
 import {useState, useEffect} from 'react'
-import { AuthContextProvider } from "./contexts/AuthContext";
+import { AuthContextProvider } from "./context/AuthContext";
 
 
 function App() {
@@ -27,29 +27,28 @@ function App() {
     <div className="App">
       <div className="">
           <NavBar/>
-          <AuthContextProvider>
-              <Switch>
-                <Route exact path="/">
-                  <Main/>
-                </Route>
+            <AuthContextProvider>
+          <Switch>
+            <Route exact path="/">
+              <Main/>
+            </Route>
 
-                <Route path="/view/single/:_id">
-                  <Recipe/>
-                </Route>
+            <Route path="/view/single/:_id">
+              <Recipe/>
+            </Route>
 
-                <Route exact path="/create">
-                  <Create/>
-                </Route>
-              </Switch>
-              
-              <SubscribePop trigger={buttonPopup} setTrigger={setButtonPopup}>
-                <h3>This is my Pop Up</h3>
-              </SubscribePop>
+            <Route exact path="/create">
+              <Create/>
+            </Route>
+          </Switch>
+          
+          <SubscribePop trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <h3>This is my Pop Up</h3>
+          </SubscribePop>
 
-              <SubscribePop trigger={timedPopup} setTrigger={setTimedPopup}>
-              </SubscribePop>
-          </AuthContextProvider>
-
+          <SubscribePop trigger={timedPopup} setTrigger={setTimedPopup}>
+          </SubscribePop>
+          
 
        </div>
     </div>

@@ -8,7 +8,7 @@ import Create from './views/Create';
 import Recipe from './views/Recipe';
 import SubscribePop from './components/SubscribePop';
 import {useState, useEffect} from 'react'
-import { AuthContextProvider } from "./contexts/AuthContext";
+import { AuthContextProvider } from "./context/AuthContext";
 
 
 function App() {

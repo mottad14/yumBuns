@@ -1,6 +1,5 @@
 import React from 'react'
 import "./SubscribePop.css"
-import { Link, useHistory } from 'react-router-dom'
 import subscribe from "../imgs/subscribe.svg"
 import Signup from './SignUp';
 
@@ -9,7 +8,7 @@ function SubscribePop(props) {
     <div className='popUp'>
         <div className='popup-inner'>
             <img src={subscribe} alt="subscribe icon" />
-            Treat yourself to more recipes! 
+            Enjoying the delicious treats? 
             <Signup></Signup>
 
             <button className='close-btn' onClick={() => props.setTrigger(false)}> close </button>

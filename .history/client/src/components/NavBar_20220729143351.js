@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import Nav from 'react-bootstrap/Nav';
+import {Form, Button, Card, Alert} from "react-bootstrap"
 import YumBuns from "../imgs/YumBunsLogo.png"
 
 const NavBar = (props) => {
@@ -20,7 +21,7 @@ const NavBar = (props) => {
                     <Nav.Link> <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/login"> Log In</Link> </Nav.Link>
                     </li>
                     <li className="nav-item">
-                    <Nav.Link>  <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/signup">    <p onClick={() => props.setTrigger(true)}> Sign Up </p>    </Link> </Nav.Link>
+                     <Button onClick={() => props.setTrigger(true)} className="nav-link d-flex mx-3 btn-outline-warning"> Sign Up</Button>
                     </li>
                 </ul>
                 <form className="d-flex mx-3" role="search">

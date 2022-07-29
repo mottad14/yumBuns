@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import {Form, Button, Card, Alert} from "react-bootstrap"
 import { UserAuth } from '../contexts/AuthContext'
-import chef from "../imgs/chef.svg"
 
 const Signup = () => {
 

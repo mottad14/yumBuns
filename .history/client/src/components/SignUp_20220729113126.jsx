@@ -28,6 +28,7 @@ const Signup = () => {
   return (
     <Card>
       <Card.Body>
+          <img src={chef} alt={chef} />
           <h3 className='text-center mb-4'> Create and receive more yummy recipes!</h3>
             {error && <Alert variant="danger"> {error} </Alert>}
 

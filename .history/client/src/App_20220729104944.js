@@ -5,7 +5,6 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Main from './views/Main';
 import Login from './views/Login'
-import NewAccount from "./views/NewAccount"
 import Create from './views/Create';
 import Recipe from './views/Recipe';
 import SubscribePop from './components/SubscribePop';
@@ -36,10 +35,6 @@ function App() {
 
                 <Route exact path="/login">
                   <Login/>
-                </Route>
-
-                <Route exact path="/signup">
-                  <NewAccount/>
                 </Route>
 
                 <Route path="/view/single/:_id">

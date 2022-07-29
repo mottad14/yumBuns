@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import {Form, Button, Card, Alert} from "react-bootstrap"
 import { UserAuth } from '../contexts/AuthContext'
-import chef from "../imgs/chef.svg"
 
 const Signup = () => {
 
@@ -28,6 +27,7 @@ const Signup = () => {
   return (
     <Card>
       <Card.Body>
+          <img src={data.imgURL} alt={data.name} />
           <h3 className='text-center mb-4'> Create and receive more yummy recipes!</h3>
             {error && <Alert variant="danger"> {error} </Alert>}
 

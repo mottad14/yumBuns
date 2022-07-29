@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import {Form, Button, Card, Alert} from "react-bootstrap"
 import { UserAuth } from '../contexts/AuthContext'
-import chef from "../imgs/chef.svg"
 
-const Signup = () => {
+const Signup = (props) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -25,7 +24,7 @@ const Signup = () => {
     }
   }
   
-  return (
+  return (props.trigger) ? ()
     <Card>
       <Card.Body>
           <h3 className='text-center mb-4'> Create and receive more yummy recipes!</h3>
@@ -44,7 +43,9 @@ const Signup = () => {
           
           <Button variant="warning" className='border border-blue-500 bg-yellow-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>Sign up</Button>
       </Form>
-      
+      <p className='w-100 text-center mt-2'>
+            Already have an account? <Link onClick={() => props.setTrigger(false)} to="/login" className='underline'> Sign in </Link> 
+      </p>
 
       </Card.Body>
     </Card>

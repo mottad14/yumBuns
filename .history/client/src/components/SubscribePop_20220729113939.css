@@ -22,8 +22,6 @@
 .popup-inner .close-btn{
     position:absolute;
     border-radius: 15%;
-    border-color: darkgoldenrod;
-    background-color: white;
     top:80px;
     right: 80px;
 }

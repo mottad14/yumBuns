@@ -19,8 +19,8 @@ const NavBar = (props) => {
                     <li className="nav-item">
                     <Nav.Link> <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/login"> Log In</Link> </Nav.Link>
                     </li>
-                    <li className="nav-item">
-                    <Nav.Link>  <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/signup">    <p onClick={() => props.setTrigger(true)}> Sign Up </p>    </Link> </Nav.Link>
+                    <li onClick={() => props.setTrigger(false)} className="nav-item">
+                    <Nav.Link onClick={() => props.setTrigger(true)}> <Link onClick={() => props.setTrigger(true)} className="nav-link d-flex mx-3 btn-outline-warning" to="/signUp"> Sign Up</Link> </Nav.Link>
                     </li>
                 </ul>
                 <form className="d-flex mx-3" role="search">

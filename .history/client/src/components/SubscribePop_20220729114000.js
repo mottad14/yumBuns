@@ -9,7 +9,7 @@ function SubscribePop(props) {
     <div className='popUp'>
         <div className='popup-inner'>
             <img src={subscribe} alt="subscribe icon" />
-            Treat yourself to more recipes! 
+            Enjoying the delicious treats? 
             <Signup></Signup>
 
             <button className='close-btn' onClick={() => props.setTrigger(false)}> close </button>

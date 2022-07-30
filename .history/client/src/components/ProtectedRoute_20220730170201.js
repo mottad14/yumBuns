@@ -10,7 +10,7 @@ const ProtectedRoute = ({children}) => {
     if (!user){
         history.push("/");
         console.log("Please log in to continue.")
-        return ( alert("Please log in to view this page"))
+        return (     alert("Please log in to view this page"))
     }
 
   return (  children  )

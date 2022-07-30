@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Poppins&display=swap');
+
+.App {
+  font-family: 'BIZ UDGothic', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  min-height: 200vh;
+}
+
+.recipePreview{
+  border: 3px solid rgb(177, 177, 177);
+  min-height: 300px;
+  width: 250px;
+  background-color: rgb(254, 194, 10);
+  border-left-style: dotted; 
+  border-right-style: dotted;
+  border-radius: 10%; 
+
+}
+
+.recipePreview > img{
+  width: 95%;
+  border-radius: 10%;
+}
+.recipePreview >div{
+  align-items: center;
+
+}
+
+.Logo{
+  margin-left: 10px;
+  height: 30px;
+}
+
+.sticky{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgb(254, 194, 10);
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.thumbnailBox > img{
+  height: 40px;
+}
+
+.thumbnailBox > img:hover{
+  height: 125px;
+}

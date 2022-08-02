@@ -5,7 +5,7 @@ import subscribe from "../imgs/subscribe.svg"
 import Signup from './SignUp';
 
 function SubscribePop(props) {
-  return (props.trigger) ? (
+  return (
     <div className='popUp'>
         <div className='popup-inner'>
             <img src={subscribe} alt="subscribe icon" />
@@ -18,7 +18,7 @@ function SubscribePop(props) {
             </p>
         </div>
     </div>
-  ) : "";
+  );
 }
 
 export default SubscribePop

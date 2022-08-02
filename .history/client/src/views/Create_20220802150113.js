@@ -80,7 +80,7 @@ const Create = (props) => {
     };
 
     return (
-        <Card bg="light"  style={{display: "flex", justifyContent: "center"}}>
+        <Card bg={light}  style={{display: "flex", justifyContent: "center"}}>
            
            <form className="d-block w-75 mx-auto" onSubmit={onSubmitHandler}>
                <div className="d-flex justify-content-around sticky d-block w-75 mx-auto p-2">

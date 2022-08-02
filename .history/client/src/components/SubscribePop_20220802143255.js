@@ -5,7 +5,7 @@ import subscribe from "../imgs/subscribe.svg"
 import Signup from './SignUp';
 
 function SubscribePop(props) {
-  return (props.trigger) ? (
+  return (props.loggedIn) ? (
     <div className='popUp'>
         <div className='popup-inner'>
             <img src={subscribe} alt="subscribe icon" />

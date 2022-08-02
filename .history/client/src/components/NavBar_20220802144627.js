@@ -10,6 +10,7 @@ const NavBar = (props) => {
     // If user is passed in as being Logged in via props then nav bar with Account and Log out info displays, 
     // if user is not logged in, navbar with subscription and log in links are pushed in.
     <nav className="navbar navbar-expand-sm bg-light mb-3">
+        <h1>THIS IS OUR LOGGED IN NAV BAR</h1>
                 <Link className="navbar-brand mx-3" to="/">  <img className="Logo" src={YumBuns} alt="Logo" /> </Link>
                
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -32,6 +33,7 @@ const NavBar = (props) => {
     : 
     
     <nav className="navbar navbar-expand-sm bg-light mb-3">
+        <h1> THIS IS A NOT LOGGED IN NAV BAR </h1>
                 <Link className="navbar-brand mx-3" to="/">  <img className="Logo" src={YumBuns} alt="Logo" /> </Link>
                
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">

@@ -17,10 +17,10 @@ const NavBar = (props) => {
                     <Nav.Link> <Link className="nav-link btn-outline-warning" aria-current="page" to="/">Home</Link> </Nav.Link>
                     </li>
                     <li className="nav-item">
-                    <Nav.Link> <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/create"> Create a Recipe</Link> </Nav.Link>
+                    <Nav.Link> <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/account"> Log In</Link> </Nav.Link>
                     </li>
                     <li className="nav-item">
-                    <Nav.Link>  <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/account">    <p> My Account </p>    </Link> </Nav.Link>
+                    <Nav.Link>  <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/signup">    <p> Sign Up </p>    </Link> </Nav.Link>
                     </li>
                 </ul>
                 <form className="d-flex mx-3" role="search">
@@ -30,7 +30,6 @@ const NavBar = (props) => {
             </nav>
     )
     : 
-    
     <nav className="navbar navbar-expand-sm bg-light mb-3">
                 <Link className="navbar-brand mx-3" to="/">  <img className="Logo" src={YumBuns} alt="Logo" /> </Link>
                

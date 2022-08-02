@@ -21,36 +21,28 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function App() {
   const [timedPopup, setTimedPopup] = useState (false);
-  const [loggedIn, setLoggedIn] = useState();
-  const [hasTriggered, setHasTriggered] = useState(false)
-
-
-
-  useEffect(() => {
 
   const auth = getAuth();
-  
   onAuthStateChanged(auth, (user) => {
   if (user) {
-    setLoggedIn(true);
+    console.log("User is now signed in.")
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-    console.log(`Current user id: ${uid}`)
     // ...
-  } else if(!hasTriggered) {
+  } else {
     // User is signed out
-    setHasTriggered(true)
-    setTimeout(() => {
-      setTimedPopup(true)
-      
-    }, 5000)
-  }}, [])
-    
-  })
-  console.log("The user is currently logged in:", loggedIn)
+    // ...
+  }
+});
 
-    
+  useEffect(() => {
+    setTimeout(() => {
+      if(!user){
+        setTimedPopup(true)
+      }
+    }, 3000)
+  }, [])
 
 
   return (
@@ -58,7 +50,7 @@ function App() {
     <div className="App" >
           <div className="container">
               <AuthContextProvider>
-                <NavBar loggedIn={loggedIn} />
+                <NavBar/>
                   <Switch>
                     <Route exact path="/">
                       <Main/>

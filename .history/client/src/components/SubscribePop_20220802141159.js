@@ -1,6 +1,6 @@
 import React from 'react'
 import "./SubscribePop.css"
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import subscribe from "../imgs/subscribe.svg"
 import Signup from './SignUp';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Switch, Route} from "react-router-dom";
-import {useState, useEffect} from 'react'
 import './App.css';
 import NavBar from './components/NavBar';
 import Main from './views/Main';
@@ -10,47 +9,22 @@ import NewAccount from "./views/NewAccount"
 import Create from './views/Create';
 import Recipe from './views/Recipe';
 import SubscribePop from './components/SubscribePop';
-import Account from './components/Account';
-import ProtectedRoute from './components/ProtectedRoute';
-import AlertMessage from './components/AlertMessage';
-
+import {useState, useEffect} from 'react'
 import { AuthContextProvider } from "./contexts/AuthContext";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import ProtectedRoute from './components/ProtectedRoute';
+import Account from './components/Account';
+import AlertMessage from './components/AlertMessage';
 
 
 
 function App() {
   const [timedPopup, setTimedPopup] = useState (false);
-  const [loggedIn, setLoggedIn] = useState();
-  const [hasTriggered, setHasTriggered] = useState(false)
-
-
 
   useEffect(() => {
-
-  const auth = getAuth();
-  
-  onAuthStateChanged(auth, (user) => {
-  if (user) {
-    setLoggedIn(true);
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    console.log(`Current user id: ${uid}`)
-    // ...
-  } else if(!hasTriggered) {
-    // User is signed out
-    setHasTriggered(true)
     setTimeout(() => {
       setTimedPopup(true)
-      
-    }, 5000)
-  }}, [])
-    
-  })
-  console.log("The user is currently logged in:", loggedIn)
-
-    
+    }, 3000)
+  }, [])
 
 
   return (
@@ -58,17 +32,17 @@ function App() {
     <div className="App" >
           <div className="container">
               <AuthContextProvider>
-                <NavBar loggedIn={loggedIn} />
+                <NavBar/>
                   <Switch>
                     <Route exact path="/">
                       <Main/>
                     </Route>
 
-                    <Route exact path="/login">
+                    <Route exact path="/login" trigger={timedPopup} setTrigger={setTimedPopup}>
                       <Login/>
                     </Route>
 
-                    <Route exact path="/signup">
+                    <Route exact path="/signup" trigger={timedPopup} setTrigger={setTimedPopup}>
                       <NewAccount/>
                     </Route>
 

@@ -15,7 +15,7 @@ const Signin = () => {
     e.preventDefault();
     setError('')
     try{ 
-      console.log("You attempting to sign in with the following email.", email)
+      console.log("You are now signed in.")
       signIn(email, password)
       history.push('/')
     } catch(e){
@@ -41,7 +41,7 @@ const Signin = () => {
                 <Form.Label className='py-2 font-medium' htmlFor=""> Password</Form.Label>
                 <Form.Control onChange={(e)=> setPassword(e.target.value)} className='border p-3' type="password"/>
               </Form.Group>
-              <Button type="submit" className='border border-blue-500 bg-yellow-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>Sign in</Button>
+              <Button className='border border-blue-500 bg-yellow-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>Sign in</Button>
               <p className='py-2'> Don't have an account? </p>
               <Link to="/signup" className='underline'> Sign up </Link>
           </Form>

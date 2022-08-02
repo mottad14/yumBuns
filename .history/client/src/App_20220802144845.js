@@ -22,7 +22,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 function App() {
   const [timedPopup, setTimedPopup] = useState (false);
   const [loggedIn, setLoggedIn] = useState();
-  const [hasTriggered, setHasTriggered] = useState(false)
 
 
 
@@ -38,9 +37,8 @@ function App() {
     const uid = user.uid;
     console.log(`Current user id: ${uid}`)
     // ...
-  } else if(!hasTriggered) {
+  } else {
     // User is signed out
-    setHasTriggered(true)
     setTimeout(() => {
       setTimedPopup(true)
       

@@ -9,7 +9,7 @@ const ProtectedRoute = ({children}) => {
     const history = useHistory();
 
     if (!user){
-        history.push("/loginAlert");
+        history.push("/");
         console.log("Please log in to continue.")
         return ( <AlertMessage/>)
     }

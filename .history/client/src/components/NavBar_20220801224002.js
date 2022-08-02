@@ -15,10 +15,11 @@ const NavBar = (props) => {
                     <li className="nav-item">
                     <Nav.Link> <Link className="nav-link btn-outline-warning" to="/create">Create a Dish</Link> </Nav.Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={() => props.setTimedPopup(false)}>
+                                    { props.children }
                     <Nav.Link> <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/login"> Log In</Link> </Nav.Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" onClick={() => props.setTimedPopup(false)}>
                     <Nav.Link>  <Link className="nav-link d-flex mx-3 btn-outline-warning" to="/signup">    <p> Sign Up </p>    </Link> </Nav.Link>
                     </li>
                 </ul>

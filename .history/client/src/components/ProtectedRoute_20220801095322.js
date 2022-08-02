@@ -1,7 +1,7 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {UserAuth} from "../contexts/AuthContext"
-import AlertMessage from './AlertMessage';
+import Alert from 'react-bootstrap/Alert';
 
 
 const ProtectedRoute = ({children}) => {
@@ -9,9 +9,9 @@ const ProtectedRoute = ({children}) => {
     const history = useHistory();
 
     if (!user){
-        history.push("/loginAlert");
+        history.push("/");
         console.log("Please log in to continue.")
-        return ( <AlertMessage/>)
+        return ( LinksExample)
     }
 
   return (  children  )

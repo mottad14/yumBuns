@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setTimedPopup(true)
-    }, 3000)
+    }, 1000)
   }, [])
 
 

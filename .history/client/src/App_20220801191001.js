@@ -11,6 +11,7 @@ import Recipe from './views/Recipe';
 import SubscribePop from './components/SubscribePop';
 import {useState, useEffect} from 'react'
 import { AuthContextProvider } from "./contexts/AuthContext";
+import eating from "./imgs/subscribe.svg"
 import ProtectedRoute from './components/ProtectedRoute';
 import Account from './components/Account';
 import AlertMessage from './components/AlertMessage';
@@ -23,7 +24,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setTimedPopup(true)
-    }, 3000)
+    }, 1000)
   }, [])
 
 
@@ -39,11 +40,11 @@ function App() {
                       <Main/>
                     </Route>
 
-                    <Route exact path="/login" trigger={timedPopup} setTrigger={setTimedPopup}>
+                    <Route exact path="/login">
                       <Login/>
                     </Route>
 
-                    <Route exact path="/signup" trigger={timedPopup} setTrigger={setTimedPopup}>
+                    <Route exact path="/signup">
                       <NewAccount/>
                     </Route>
 

@@ -44,10 +44,6 @@
   border-right-style: dotted;
   border-radius: 10%; 
 }
-
-.Recipe >div{
-  align-items: center;
-}
 .Recipe > img{
   width: 95%;
   border-radius: 10%;
@@ -55,7 +51,7 @@
 
 .Logo{
   margin-left: 10px;
-  height: 35px;
+  height: 30px;
 }
 
 .sticky{

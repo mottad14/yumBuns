@@ -47,7 +47,7 @@ const Recipe = (props) => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Instructions</Accordion.Header>
+        <Accordion.Header>Steps</Accordion.Header>
         <Accordion.Body>
           <Accordion defaultActiveKey={['0']} alwaysOpen>
                         {recipe.steps? (recipe.steps).map((step, i) =>{

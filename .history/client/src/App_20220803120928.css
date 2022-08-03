@@ -12,7 +12,7 @@
 }
 
 .recipePreview{
-  border: 5px solid rgb(177, 177, 177);
+  border: 3px solid rgb(177, 177, 177);
   min-height: 300px;
   width: 250px;
   background-color: rgb(254, 194, 10);
@@ -37,16 +37,12 @@
 
 .Recipe{
   border: 5px solid rgb(177, 177, 177);
-  min-height: 500px;
-  width: 480px;
+  min-height: 300px;
+  width: 250px;
   background-color: rgb(254, 194, 10);
   border-left-style: dotted; 
   border-right-style: dotted;
   border-radius: 10%; 
-}
-
-.Recipe >div{
-  align-items: center;
 }
 .Recipe > img{
   width: 95%;
@@ -55,7 +51,7 @@
 
 .Logo{
   margin-left: 10px;
-  height: 35px;
+  height: 30px;
 }
 
 .sticky{

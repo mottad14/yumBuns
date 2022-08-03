@@ -44,7 +44,7 @@ function App() {
     setTimeout(() => {
       setTimedPopup(true)
       
-    }, 30000)
+    }, 1000)
   }}, [])
     
   })

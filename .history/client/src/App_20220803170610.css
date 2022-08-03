@@ -38,7 +38,7 @@
 .Recipe{
   border: 5px solid rgb(177, 177, 177);
   min-height: 500px;
-  width: 480px;
+  width: 450px;
   background-color: rgb(254, 194, 10);
   border-left-style: dotted; 
   border-right-style: dotted;

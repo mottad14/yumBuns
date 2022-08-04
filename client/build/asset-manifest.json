@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ed81da97.css",
+    "main.js": "/static/js/main.10c378e3.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/chef.svg": "/static/media/chef.2b8b5b3ff9907ad005a3fe29bd79a134.svg",
+    "static/media/YumBunsLogo.png": "/static/media/YumBunsLogo.591b80a530969d103c41.png",
+    "static/media/eating.svg": "/static/media/eating.31dc05726700f8a1791eadc3b82a22bd.svg",
+    "static/media/subscribe.svg": "/static/media/subscribe.90d4cfc8721f13b6fb7b92b2a41abfd6.svg",
+    "index.html": "/index.html",
+    "main.ed81da97.css.map": "/static/css/main.ed81da97.css.map",
+    "main.10c378e3.js.map": "/static/js/main.10c378e3.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed81da97.css",
+    "static/js/main.10c378e3.js"
+  ]
+}

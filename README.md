@@ -8,7 +8,7 @@ YumBuns seeks to offer an easy and simple way to create and share recipes online
 This is a personal project implementing ReactJS's Create React App environment, Google's Firebase Authentication, and AWS's EC2 Hosting and Deployment.
 
 
-# Watch me demo this version of YumBuns
+# Watch a demo of my most current version of YumBuns
 
 This project uses React JS and Boostrap for a quick & seamless component and element built front-end UI. 
 Recipe data is stored and built using MongoDb through its NoSQL query API model - using Express as the routing middleware. 

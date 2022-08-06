@@ -1,7 +1,7 @@
 # Welcome to YumBuns!
 ![YumBunsLogo](https://user-images.githubusercontent.com/93226206/178125259-50c4b7b4-53eb-469b-8426-cc9f1dc0409a.png)
 
-An in progress version of YumBuns can be found on an AWS EC2 Instance at the following link: http://ec2-18-191-144-79.us-east-2.compute.amazonaws.com/ 
+The current version of YumBuns can be found on an AWS EC2 Instance at the following link: http://ec2-18-191-144-79.us-east-2.compute.amazonaws.com/ 
 
 YumBuns seeks to offer an easy and simple way to create and share recipes online - offering easy and quick access to ingredients, instructions - especially, when shopping. 
 
@@ -16,5 +16,4 @@ Recipe data is stored and built using MongoDb through its NoSQL query API model 
 Users are able to register and subscribe through a timed pop up or out of their own interest using Google's Firebase authentication and registration/subscription.
 
 # Front end to Back End request/response diagram:
-
-
+![Screen Shot 2022-08-06 at 9 27 25 AM](https://user-images.githubusercontent.com/93226206/183253115-e9787e9f-2052-4bdb-93c5-559fcd618cde.png)

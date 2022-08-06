@@ -16,4 +16,4 @@ Recipe data is stored and built using MongoDb through its NoSQL query API model 
 Users are able to register and subscribe through a timed pop up or out of their own interest using Google's Firebase authentication and registration/subscription.
 
 # Front end to Back End request/response diagram:
-![Screen Shot 2022-08-06 at 9 27 25 AM](https://user-images.githubusercontent.com/93226206/183253115-e9787e9f-2052-4bdb-93c5-559fcd618cde.png)
+![Screen Shot 2022-08-06 at 9 32 43 AM](https://user-images.githubusercontent.com/93226206/183253378-bb022a6e-2352-43e9-a557-3f96031355d9.png)

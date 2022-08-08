@@ -16,6 +16,7 @@ import AlertMessage from './components/AlertMessage';
 
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import SuccessMessage from './components/SuccessMessage';
 
 
 
@@ -44,7 +45,7 @@ function App() {
     setTimeout(() => {
       setTimedPopup(true)
       
-    }, 30000)
+    }, 5000)
   }}, [])
     
   })
@@ -85,9 +86,18 @@ function App() {
                       <Main/>
                     </Route>
 
+                    <Route exact path="/success">
+                      <ProtectedRoute>              
+                          <SuccessMessage/>
+                          <Main/>
+                      </ProtectedRoute>
+
+                    </Route>
+
                     <Route exact path="/account">
                       <ProtectedRoute>   <Account/>  </ProtectedRoute>
                     </Route>
+                  
                   </Switch>
 
                   <SubscribePop trigger={timedPopup} setTrigger={setTimedPopup}>

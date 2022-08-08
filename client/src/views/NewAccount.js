@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {Form, Button, Card, Alert} from "react-bootstrap"
 import { UserAuth } from '../contexts/AuthContext'
 import eating from "../imgs/eating.svg"
@@ -20,7 +20,7 @@ const Signup = () => {
     try{
       await createUser(email, password)
       console.log("Creating this user's account")
-      history.push("/");
+      history.push("/success");
     } catch(e) {
       setError(e.message)
       console.log(e.message)

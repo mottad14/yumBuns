@@ -17,7 +17,7 @@ const Signin = () => {
     try{ 
       console.log("You attempting to sign in with the following email.", email)
       signIn(email, password)
-      history.push('/')
+      history.push('/success')
     } catch(e){
       setError(e.message)
       console.log(error)

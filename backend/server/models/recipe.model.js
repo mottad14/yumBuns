@@ -19,6 +19,10 @@ const IngredientSchema = new mongoose.Schema({
 
 const RecipeSchema = new mongoose.Schema({
     // name
+    userID:{
+        type: String, 
+        required: true
+    },
     name:{
         type: String,
         required: true,

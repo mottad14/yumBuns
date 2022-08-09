@@ -6,6 +6,7 @@ import { Card } from "react-bootstrap";
 
 const Create = (props) => {
     const [form, setForm] = useState({
+        userID: "",
         name:"",
         minutes: 0,
         servings: null,
@@ -72,7 +73,8 @@ const Create = (props) => {
         event.preventDefault();
         axios.post("http://localhost:8000/api/recipes/create", form)
             .then(res=>{
-                history.push("/");
+                history.push("/recipePosted");
+                console.log(form.userID)
             })
             .catch(err=>{
                 console.log(err)
@@ -83,6 +85,7 @@ const Create = (props) => {
         <Card bg="light"  style={{display: "flex", justifyContent: "center"}}>
            
            <form className="d-block w-75 mx-auto" onSubmit={onSubmitHandler}>
+            <input type="hidden" name="userID" value={props.userID}/>
                <div className="d-flex justify-content-around sticky d-block w-75 mx-auto p-2">
                     <h1> Build a recipe</h1>
                     <input type="submit" className="btn btn-lg btn-success" value="Post Recipe" />
@@ -135,7 +138,7 @@ const Create = (props) => {
                                 <span className="input-group-text" key={i}> Step {i+1}</span>
                                 <textarea onChange={(event)=>onChangeStep(event, i)} value={step} placeholder="Type instructions here" className="form-control col-12" aria-label="With textarea"></textarea>
                                 <button className="btn btn-sm btn-danger" onClick={(event)=>onRemoveStep(event, i)}>X</button>
-                       </div>
+                            </div>
                    })
                }
                <button onClick={onAddStep} className="btn btn-dark">Add Step</button>

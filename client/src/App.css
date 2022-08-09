@@ -30,9 +30,8 @@
   align-items: center;
 }
 
-.recipePreview:hover{
+.recipePreview:hover {
   width: 260px;
-
 }
 
 .Recipe{

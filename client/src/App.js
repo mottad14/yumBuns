@@ -17,13 +17,15 @@ import AlertMessage from './components/AlertMessage';
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import SuccessMessage from './components/SuccessMessage';
+import RecipeCreatedAlert from './components/RecipeCreatedAlert';
 
 
 
 function App() {
   const [timedPopup, setTimedPopup] = useState (false);
   const [loggedIn, setLoggedIn] = useState();
-  const [hasTriggered, setHasTriggered] = useState(false)
+  const [hasTriggered, setHasTriggered] = useState(false);
+  const [userID, setUserID] = useState();
 
 
 
@@ -37,6 +39,7 @@ function App() {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
+    setUserID(uid)
     console.log(`Current user id: ${uid}`)
     // ...
   } else if(!hasTriggered) {
@@ -74,12 +77,19 @@ function App() {
                     </Route>
 
                     <Route path="/view/single/:_id">
-                      <Recipe/>
+                      <Recipe userID={userID}/>
                     </Route>
 
                     <Route exact path="/create">
-                      <ProtectedRoute>   <Create/>  </ProtectedRoute>
+                      <ProtectedRoute>   <Create userID={userID}/>  </ProtectedRoute>
                     </Route>
+
+                    <Route exact path="/recipePosted">
+                      <ProtectedRoute>              
+                          <RecipeCreatedAlert/>
+                          <Main/>
+                      </ProtectedRoute>
+                     </Route>
 
                     <Route exact path="/loginAlert">
                       <AlertMessage/>
@@ -91,7 +101,6 @@ function App() {
                           <SuccessMessage/>
                           <Main/>
                       </ProtectedRoute>
-
                     </Route>
 
                     <Route exact path="/account">
@@ -102,6 +111,7 @@ function App() {
 
                   <SubscribePop trigger={timedPopup} setTrigger={setTimedPopup}>
                   </SubscribePop>
+
               </AuthContextProvider>
 
        </div>

@@ -31,6 +31,7 @@ const Signin = () => {
     const errorMessage = error.message;
     setError(errorMessage)
     setAttempt(true)
+    console.log(errorCode)
   });
 
   }

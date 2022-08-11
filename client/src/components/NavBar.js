@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import Nav from 'react-bootstrap/Nav';
-import Dropdown from 'react-bootstrap/Dropdown';
-import NavItem from 'react-bootstrap/NavItem';
-import NavLink from 'react-bootstrap/NavLink';
 import YumBuns from "../imgs/YumBunsLogo.png"
 
 const NavBar = (props) => {

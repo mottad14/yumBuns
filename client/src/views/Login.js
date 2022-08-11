@@ -3,6 +3,9 @@ import { Link, useHistory } from 'react-router-dom'
 import {Form, Button, Card, Alert} from "react-bootstrap"
 import { UserAuth } from '../contexts/AuthContext'
 import chef from "../imgs/chef.svg"
+import { useEffect } from 'react'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 
 const Signin = () => {
   const [email, setEmail] = useState('')
@@ -10,26 +13,56 @@ const Signin = () => {
   const [error, setError] = useState('')
   const {signIn} = UserAuth()
   const history = useHistory();
+  const [attempt, setAttempt] = useState(false)
 
   const handleSubmit = (e) =>{
     e.preventDefault();
     setError('')
-    try{ 
-      console.log("You attempting to sign in with the following email.", email)
-      signIn(email, password)
-      history.push('/success')
-    } catch(e){
-      setError(e.message)
-      console.log(error)
-    }
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    setAttempt(true)
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setError(errorMessage)
+    setAttempt(true)
+  });
+
+    // try{ 
+    //   console.log("You attempting to sign in with the following email.", email)
+    //   signIn(email, password)
+    //   setAttempt(true)
+    // } catch(e){
+    //   console.log(e.error.message)
+    //   setError(e.error.message)
+    //   console.log("This is a caught error when attempting to use Google's Sign In function")
+    // }
   }
 
+  useEffect(() => {
+    if (error.length === 0 && attempt){
+      history.push('/success')
+    } 
+  }, [handleSubmit])
+  
+
+  
   return (
     <div style={{ display: 'flex',
         height: '80vh'}}>
     <img className='flex' style={{maxWidth: "50vw"}} src={chef} alt={chef} />
     <Card className="text-center bg-warning" xs={12} md={4} lg={3}>
       <Card.Body className='text-center mb-4'>
+        
+        {error && <Alert variant={"danger"}>
+          {error}
+        </Alert> }
+
               <h1 className='text-center mb-4'>Sign in to your account</h1>
 
           <Form onSubmit={handleSubmit}> 

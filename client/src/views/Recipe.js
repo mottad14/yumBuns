@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useParams, useHistory} from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
 import Accordion from 'react-bootstrap/Accordion';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+
 
 const Recipe = (props) => {
     const [recipe, setRecipe] = useState({})
     const { _id } = useParams();
-    const history = useHistory();
 
     function viewRecipe(){        
         return(<div className="Recipe container p-4">
@@ -69,11 +70,10 @@ const Recipe = (props) => {
                 setRecipe(res.data);
             })
             .catch(err => console.error(err));
-    }, []);
+    }, [_id]);
     
-    return (props.userID) ? ( <div> <div> <button>Edit your Recipe</button></div> {viewRecipe()} </div>)
+    return (props.userID === recipe.userID) ? ( <div> The current recipe id is {_id} <div> <Button> <Link to={`/edit/${_id}`} style={{color: "white", textDecoration: "none"}}> Edit your Recipe </Link> </Button></div> {viewRecipe()} </div>)
          : (viewRecipe());
-        
 }
 
 export default Recipe

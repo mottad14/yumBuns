@@ -18,6 +18,7 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import SuccessMessage from './components/SuccessMessage';
 import RecipeCreatedAlert from './components/RecipeCreatedAlert';
+import EditRecipe from './views/EditRecipe';
 
 
 
@@ -48,7 +49,7 @@ function App() {
     setTimeout(() => {
       setTimedPopup(true)
       
-    }, 5000)
+    }, 45000)
   }}, [])
     
   })
@@ -77,7 +78,13 @@ function App() {
                     </Route>
 
                     <Route path="/view/single/:_id">
-                      <Recipe userID={userID}/>
+                      <Recipe userID={userID}/> 
+                    </Route>
+
+                    <Route path="/edit/:_id">
+                        <ProtectedRoute>              
+                            <EditRecipe userID={userID}/>
+                        </ProtectedRoute>
                     </Route>
 
                     <Route exact path="/create">

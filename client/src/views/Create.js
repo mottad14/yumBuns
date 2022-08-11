@@ -6,7 +6,7 @@ import { Card } from "react-bootstrap";
 
 const Create = (props) => {
     const [form, setForm] = useState({
-        userID: "",
+        userID: props.userID,
         name:"",
         minutes: 0,
         servings: null,

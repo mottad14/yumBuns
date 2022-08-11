@@ -6,5 +6,5 @@ module.exports = app => {
     app.post("/api/recipes/create", RecipeController.createRecipe);
     app.get("/api/recipes/one/:_id", RecipeController.findOneRecipe)
     app.delete("/api/recipes/delete/:_id", RecipeController.deleteOneRecipe);
-    app.patch("/api/recipes/update/:_id/", RecipeController.updateOneRecipe);
+    app.patch("/api/recipes/update/:_id", RecipeController.updateOneRecipe);
 }

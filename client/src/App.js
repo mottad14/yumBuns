@@ -19,6 +19,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import SuccessMessage from './components/SuccessMessage';
 import RecipeCreatedAlert from './components/RecipeCreatedAlert';
 import EditRecipe from './views/EditRecipe';
+import SuccessDelete from './components/SuccessDelete';
 
 
 
@@ -85,6 +86,13 @@ function App() {
                         <ProtectedRoute>              
                             <EditRecipe userID={userID}/>
                         </ProtectedRoute>
+                    </Route>
+
+                    <Route exact path="/successDelete">
+                      <ProtectedRoute>              
+                          <SuccessDelete/>
+                          <Main/>
+                      </ProtectedRoute>
                     </Route>
 
                     <Route exact path="/create">

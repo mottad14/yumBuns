@@ -1,16 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { useParams, Link} from "react-router-dom";
+import { useParams, useHistory, Link} from "react-router-dom";
 import Accordion from 'react-bootstrap/Accordion';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 const Recipe = (props) => {
+    const history = useHistory();
     const [recipe, setRecipe] = useState({})
     const { _id } = useParams();
+    const [deleteAlert, setDeleteAlert] = useState(false);
 
+    const handleClose = () => setDeleteAlert(false);
+    const deleteHandler = (e)=>{
+        e.preventDefault();
+        console.log("This is the delete handler being activated.")
+        setDeleteAlert(true)
+    }
+
+    const deleteRecipe = () => {axios.delete("http://localhost:8000/api/recipes/delete/"+_id)
+            .then(res=>{
+                console.log(res)
+                history.push("/successDelete");
+            })
+            .catch(err=>{
+                console.log(err)
+            });
+        }
+
+
+
+    // The following view is a part of a function, which is called at the bottom by userId dependent ternary 
     function viewRecipe(){        
         return(<div className="Recipe container p-4">
                     <h3>{recipe.name}</h3>
@@ -72,7 +95,28 @@ const Recipe = (props) => {
             .catch(err => console.error(err));
     }, [_id]);
     
-    return (props.userID === recipe.userID) ? ( <div> The current recipe id is {_id} <div> <Button> <Link to={`/edit/${_id}`} style={{color: "white", textDecoration: "none"}}> Edit your Recipe </Link> </Button></div> {viewRecipe()} </div>)
+    return (props.userID === recipe.userID) ? ( 
+    <div> 
+        <Modal show={deleteAlert} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Delete "{recipe.name}"</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you'd like to delete this yummy recipe?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={deleteRecipe}>
+            Delete Recipe
+          </Button>
+        </Modal.Footer>
+      </Modal>
+        <div>
+         <Button> <Link to={`/edit/${_id}`} style={{color: "white", textDecoration: "none"}}> Edit your Recipe </Link> </Button>
+         <Button onClick={deleteHandler} variant='danger'>  Delete your recipe </Button>
+         
+         </div> {viewRecipe()} 
+    </div>)
          : (viewRecipe());
 }
 

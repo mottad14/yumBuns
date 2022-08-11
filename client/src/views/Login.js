@@ -33,15 +33,6 @@ const Signin = () => {
     setAttempt(true)
   });
 
-    // try{ 
-    //   console.log("You attempting to sign in with the following email.", email)
-    //   signIn(email, password)
-    //   setAttempt(true)
-    // } catch(e){
-    //   console.log(e.error.message)
-    //   setError(e.error.message)
-    //   console.log("This is a caught error when attempting to use Google's Sign In function")
-    // }
   }
 
   useEffect(() => {

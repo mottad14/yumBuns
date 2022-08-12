@@ -95,7 +95,7 @@ const Recipe = (props) => {
             .catch(err => console.error(err));
     }, [_id]);
     
-    return (props.userID === recipe.userID) ? ( 
+    return ( props.userID && props.userID === recipe.userID) ? ( 
     <div> 
         <Modal show={deleteAlert} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, useLocation} from "react-router-dom";
 import {useState, useEffect} from 'react'
 import './App.css';
 import NavBar from './components/NavBar';
@@ -29,12 +29,10 @@ function App() {
   const [hasTriggered, setHasTriggered] = useState(false);
   const [userID, setUserID] = useState();
 
-
+  const location = useLocation();
 
   useEffect(() => {
-
   const auth = getAuth();
-  
   onAuthStateChanged(auth, (user) => {
   if (user) {
     setLoggedIn(true);
@@ -43,6 +41,8 @@ function App() {
     const uid = user.uid;
     setUserID(uid)
     console.log(`Current user id: ${uid}`)
+    setHasTriggered(true)
+    setTimedPopup(false);
     // ...
   } else if(!hasTriggered) {
     // User is signed out
@@ -51,10 +51,12 @@ function App() {
       setTimedPopup(true)
       
     }, 45000)
-  }}, [])
+  }
+
+}, [location, loggedIn])
     
   })
-  console.log("The user is currently logged in:", loggedIn)
+  console.log("This user is currently logged in:", loggedIn, "if undefined, no user.")
 
     
 

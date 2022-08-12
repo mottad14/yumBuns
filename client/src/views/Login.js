@@ -38,6 +38,7 @@ const Signin = () => {
 
   useEffect(() => {
     if (error.length === 0 && attempt){
+
       history.push('/success')
     } 
   }, [handleSubmit])
